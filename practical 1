@@ -1,0 +1,63 @@
+a = 10
+b = 3
+x = 10.5
+name = "python"
+flag = True
+print("Integer:",a,type(a))
+print("Float:",x,type(x))
+print("String:",name,type(name))
+print("Boolean:",flag,type(flag))
+
+print("\nArithmatic operators")
+print("Addition:",a+b)
+print("Subtraction:",a-b)
+print("Multiplication:",a*b)
+print("Division:",a/b)
+print("Floor Division:",a//b)
+print("Modulus:",a%b)
+print("Exponent:",a**b)
+
+print("\nAssignment operators")
+c = 5
+print("Initial value:",c)
+c +== 2
+print("c += 2:",c)
+c -= 1
+print("c -= 1:",c)
+c *= 3
+print("c *= 3:",c)
+c /= 2
+print("c /=2:",c)
+
+print("\nComparison operators")
+print("a == b:",a == b)
+print("a != b:",a != b)
+print("a > b:",a > b)
+print("a < b:",a < b)
+print("a >= b:",a >= b)
+print("a <= b:",a <= b)
+
+print("\nLogical operators)
+print("True and False:",True and False)
+print("True and False:",True or false)]
+print("not True:",not True)
+
+print("\nMembership operators)
+list1 = [10,20,30,40]
+print("list1 is list2:",10 in list2)
+print("50 not in list3:",list1 is list1)
+
+print("\nIdentity operators)
+list2 = list1
+list3 = [10,20,30,40]
+print("list1 is list2:",list1 is list2)
+print("list1 is list3:",list1 is list3)
+print("list1 is not list3:",list1 is not list3)
+
+print("\nBitwise operators)
+print("a & b=:",a & b)
+print("a | b=:",a | b)
+print("a ^ b=:",a ^ b)
+print("~a=:",~a)
+print("a << 1:",a << 1)
+print("a >> 1:",a >> 1)
