@@ -1,0 +1,99 @@
+
+fruits = ["Apple", "Banana", "Mango", "Orange"]
+
+print("Original List:", fruits)
+
+fruits.append("Grapes")
+print("After append:", fruits)
+
+fruits.insert(1, "Kiwi")
+print("After insert:", fruits)
+
+fruits.remove("Banana")
+print("After remove:", fruits)
+
+fruits.pop()
+print("After pop:", fruits)
+
+fruits.sort()
+print("After sort:", fruits)
+
+fruits.reverse()
+print("After reverse:", fruits)
+
+print("Index of Mango:", fruits.index("Mango"))
+
+print("Count of Apple:", fruits.count("Apple"))
+
+new_list = fruits.copy()
+print("Copied List:", new_list)
+
+new_list.clear()
+print("After clear:", new_list)
+
+numbers = (10, 20, 30, 20, 40)
+
+print("Tuple:", numbers)
+
+print("Count of 20:", numbers.count(20))
+
+print("Index of 30:", numbers.index(30))
+
+colors = {"Red", "Blue", "Green"}
+
+print("Original Set:", colors)
+
+colors.add("Yellow")
+print("After add:", colors)
+
+colors.update(["Black", "White"])
+print("After update:", colors)
+
+colors.remove("Blue")
+print("After remove:", colors)
+
+colors.discard("Pink")
+print("After discard:", colors)
+
+student = {
+    "Name": "Krinal",
+    "Age": 19,
+    "City": "Surat"
+}
+
+print("Original Dictionary:", student)
+
+student["Age"] = 20
+print("After update:", student)
+
+student["Course"] = "Computer Engineering"
+print("After add:", student)
+
+student.pop("City")
+print("After pop:", student)
+
+print("Keys:", student.keys())
+
+print("Values:", student.values())
+
+print("Items:", student.items())
+
+text = "Python Programming"
+
+print("Original String:", text)
+
+print("Upper:", text.upper())
+
+print("Lower:", text.lower())
+
+print("Replace:", text.replace("Python", "Java"))
+
+print("Split:", text.split())
+
+print("Find:", text.find("Programming"))
+
+print("Count of m:", text.count("m"))
+
+print("Startswith Python:", text.startswith("Python"))
+
+print("Endswith ing:", text.endswith("ing"))
