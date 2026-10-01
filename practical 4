@@ -1,0 +1,62 @@
+def greet():
+    # Display a greeting message
+    print("Hello, Python!")
+
+greet()
+def add(a, b):
+    # Add two numbers
+    print("Sum =", a + b)
+
+add(10, 20)
+def greet(name="Student"):
+    # Display greeting using default argument
+    print("Hello", name)
+
+greet()
+greet("Krinal")
+def student(name, age):
+    # Display student details
+    print("Name:", name)
+    print("Age:", age)
+
+student(age=20, name="Krinal")
+def total(*numbers):
+ # Calculate the sum of multiple numbers
+    sum = 0
+
+    for num in numbers:
+        sum += num
+
+    print("Total =", sum)
+
+total(10, 20, 30, 40)
+import math
+
+num = 25
+
+# Calculate square root
+print("Square Root =", math.sqrt(num))
+
+# Calculate power
+print("Power =", math.pow(2, 3))
+
+# Calculate factorial
+print("Factorial =", math.factorial(5))
+import random
+
+# Generate a random number
+num = random.randint(1, 100)
+
+print("Random Number =", num)
+import statistics
+
+data = [10, 20, 30, 40, 50]
+
+# Calculate mean
+print("Mean =", statistics.mean(data))
+
+# Calculate median
+print("Median =", statistics.median(data))
+
+# Calculate mode
+print("Mode =", statistics.mode(data))
