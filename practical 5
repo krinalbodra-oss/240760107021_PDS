@@ -1,0 +1,48 @@
+import csv
+import pickle
+# Write operation
+with open("text.txt", "w") as file:
+    file.write("Hello Python\n")
+    file.write("File Handling\n")
+
+# Read operation
+with open("text.txt", "r") as file:
+    print(file.read())
+
+# Append operation
+with open("text.txt", "a") as file:
+    file.write("New Line Added\n")
+    # Write operation
+with open("data.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Age", "City"])
+    writer.writerow(["Krinal", 20, "Surat"])
+    writer.writerow(["Rahul", 21, "Ahmedabad"])
+
+# Read operation
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+# Append operation
+with open("data.csv", "a", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(["Riya", 20, "Vadodara"])
+    # Write operation
+data = {"Name": "Krinal", "Age": 20}
+
+with open("data.dat", "wb") as file:
+    pickle.dump(data, file)
+
+# Read operation
+with open("data.dat", "rb") as file:
+    data = pickle.load(file)
+    print(data)
+
+# Append operation
+new_data = {"Name": "Riya", "Age": 21}
+
+with open("data.dat", "ab") as file:
+    pickle.dump(new_data, file)
+    
