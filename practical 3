@@ -1,0 +1,55 @@
+# Program using if statement
+num = int(input("Enter a number: "))
+
+if num > 0:
+    print("Number is positive")
+# Program using if-else statement
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("Number is even")
+else:
+    print("Number is odd")
+# Program using elif statement
+marks = int(input("Enter marks: "))
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 60:
+    print("Grade C")
+elif marks >= 40:
+    print("Grade D")
+else:
+    print("Fail")
+# Program using while loop
+num = 1
+
+while num <= 10:
+    print(num)
+    num += 1
+# Program using for loop
+for i in range(1, 11):
+    print(i)
+# Program using nested loops
+for i in range(1, 6):
+    for j in range(1, 6):
+        print("*", end=" ")
+    print()
+# Program using break statement
+for i in range(1, 11):
+    if i == 6:
+        break
+    print(i)
+# Program using continue statement
+for i in range(1, 11):
+    if i == 5:
+        continue
+    print(i)
+# Program using pass statement
+for i in range(1, 6):
+    if i == 3:
+        pass
+    print(i)
+    
