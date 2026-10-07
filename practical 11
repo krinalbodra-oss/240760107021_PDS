@@ -1,0 +1,31 @@
+import pandas as pd
+
+marks = pd.Series([85, 72, 90, 65, 78], index=["A", "B", "C", "D", "E"])
+print("Pandas series:")
+print(marks)
+
+data = {
+    "Name": ["Krinal", "Jainu", "Priya", "Drishti", "Khushi"],
+    "Department": ["CE", "IT", "CE", "IT", "CE"],
+    "Marks":,
+    "Age": [20, 21, 20, 22, 21]
+}
+
+df = pd.DataFrame(data)
+print("\n Data Frame : ")
+print(df)
+
+print("\n Data selection : ")
+print(df["Marks"])
+print(df.iloc[0:3])
+print(df[["Name", "Marks"]])
+
+print("\n Data filtering : ")
+print(df[df["Marks"] > 75])
+print(df[df["Department"] == "CE"])
+
+print("\n grouping : ")
+print(df.groupby("Department")["Marks"].mean())
+
+print("\n Aggregation : ")
+print(df.groupby("Department")["Marks"].agg(["mean", "sum", "min", "max", "count"]))
