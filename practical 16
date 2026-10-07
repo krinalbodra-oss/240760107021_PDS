@@ -1,0 +1,37 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm, expon
+
+mu = 0
+sigma = 1
+x = np.linspace(-4, 4, 100)
+normal_pdf = norm.pdf(x, mu, sigma)
+plt.plot(x, normal_pdf)
+plt.xlabel("x")
+plt.ylabel("Probability Density")
+plt.title("Normal Distribution")
+plt.show()
+
+scale = 2
+x = np.linspace(0, 10, 100)
+exponential_pdf = expon.pdf(x, scale=scale)
+plt.plot(x, exponential_pdf)
+plt.xlabel("x")
+plt.ylabel("Probability Density")
+plt.title("Exponential Distribution")
+plt.show()
+
+population = np.random.exponential(scale=2, size=100000)
+sample_means = []
+for i in range(1000):
+    sample = np.random.choice(population, size=30)
+    sample_means.append(np.mean(sample))
+
+plt.hist(sample_means, bins=30, density=True)
+plt.xlabel("Sample Mean")
+plt.ylabel("Frequency")
+plt.title("Central Limit Theorem")
+plt.show()
+
+print("Population mean: ", round(np.mean(population), 2))
+print("Mean of sample means: ", round(np.mean(sample_means), 2))
