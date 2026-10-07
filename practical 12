@@ -1,0 +1,19 @@
+import numpy as np
+from scipy import stats
+
+data = [12, 15, 14, 10, 18, 20, 15, 16, 14, 13]
+
+print("Mean : ", np.mean(data))
+print("Medium : ", np.median(data))
+print("Variance : ", np.var(data))
+print("Standard Deviation : ", np.std(data))
+
+t_stat, p_value = stats.ttest_1samp(data, 15)
+print("\n T-test : ")
+print("T-statistic : ", t_stat)
+print("P-value : ", p_value)
+
+stat, p = stats.shapiro(data)
+print("\n shapiro-wilk test : ")
+print("Test statistic : ", stat)
+print("P-value : ", p)
