@@ -1,0 +1,57 @@
+!pip install mysql-connector-python
+import mysql.connector
+
+conn = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="your_password"
+)
+
+cursor = conn.cursor()
+
+cursor.execute("CREATE DATABASE IF NOT EXISTS krinal")
+cursor.execute("USE krinal")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    age INT
+)
+""")
+
+conn.commit()
+
+print("Database and table created successfully")
+sql = "INSERT INTO students (name, email, age) VALUES (%s, %s, %s)"
+values = ("Krinal", "krinalbodra@gmail.com", 20)
+
+cursor.execute(sql, values)
+conn.commit()
+
+print("Record inserted successfully")
+cursor.execute("SELECT * FROM students")
+
+records = cursor.fetchall()
+
+for row in records:
+    print(row)
+    sql = "UPDATE students SET age = %s WHERE name = %s"
+values = (21, "Krinal")
+
+cursor.execute(sql, values)
+conn.commit()
+
+print("Record updated successfully")
+sql = "DELETE FROM students WHERE name = %s"
+values = ("Krinal",)
+
+cursor.execute(sql, values)
+conn.commit()
+
+print("Record deleted successfully")
+cursor.close()
+conn.close()
+
+print("MySQL connection closed")
