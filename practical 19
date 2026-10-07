@@ -1,0 +1,41 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv("bank.csv")
+
+print("Original Data:")
+print(df.head())
+
+print("\nSlicing:")
+print(df.iloc[0:10, 0:5])
+
+print("\nFiltering:")
+print(df[df["age"] > 30])
+
+print("\nSorting by age:")
+print(df.sort_values(by="age", ascending=False).head(10))
+
+df1 = df.iloc[:5]
+df2 = df.iloc[5:10]
+
+df_concat = pd.concat([df1, df2], ignore_index=True)
+
+print("\nConcatenated Data:")
+print(df_concat)
+
+print("\nAggregating:")
+print("Average Age:", df["age"].mean())
+print("Maximum Age:", df["age"].max())
+print("Minimum Age:", df["age"].min())
+
+print("\nAverage Balance:", df["balance"].mean())
+print("Maximum Balance:", df["balance"].max())
+print("Minimum Balance:", df["balance"].min())
+
+df["balance_normalized"] = (
+    (df["balance"] - df["balance"].min()) /
+    (df["balance"].max() - df["balance"].min())
+)
+
+print("\nNormalized Data:")
+print(df[["balance", "balance_normalized"]].head(10))
