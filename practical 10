@@ -1,0 +1,29 @@
+import numpy as np
+
+a1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print("array is: ", a1)
+print("zero grid: ", np.zeros((2, 4)))
+print("one grid: ", np.ones((2, 3)))
+print("Even numbers: ", np.arange(0, 12).reshape(3, 4))
+print("Equispaced: ", np.linspace(0, 1, 15).reshape(3, 5))
+
+print("Element at row 2, column 3: ", a1[1, 2])
+print("First row: ", a1[0, :])
+print("second row: ", a1[1, :])
+
+print("First two rows: ", a1[:2, :])
+print("last two columns: ", a1[:, 1:])
+print("First column: ", a1[:, 0])
+
+a2 = np.arange(1, 13).reshape(3, 4)
+print("Reshaped Array (3x4): ", a2)
+
+a3 = np.array([10, 20, 30])
+print("Addition of array 1 and 3: ", a1 + a3)
+print("Floor division: ", a3 // 5)
+
+print("Addition: ", a1 + a2[:, :3])
+print("subtraction: ", a1 - 2)
+print("Multiplication: ", a1 * 3)
+print("Division: ", a1 / 2)
+print("Square: ", a1 ** 2)
