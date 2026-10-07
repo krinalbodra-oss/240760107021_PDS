@@ -1,0 +1,80 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("bank.csv")
+
+df.columns = df.columns.str.strip()
+
+print("First 5 rows:")
+display(df.head())
+
+print("\nColumn names:")
+print(df.columns.tolist())
+
+fig, axes = plt.subplots(3, 2, figsize=(15, 12))
+
+axes[0, 0].plot(
+    df.index + 1,
+    df["age"],
+    marker="o",
+    linewidth=1
+)
+axes[0, 0].set_title("Line Plot - Customer Age")
+axes[0, 0].set_xlabel("Customer Index")
+axes[0, 0].set_ylabel("Age")
+axes[0, 0].grid(True)
+
+job_count = df["job"].value_counts()
+axes[0, 1].bar(
+    job_count.index,
+    job_count.values
+)
+axes[0, 1].set_title("Bar Chart - Job")
+axes[0, 1].set_xlabel("Job")
+axes[0, 1].set_ylabel("Number of Customers")
+axes[0, 1].tick_params(
+    axis="x",
+    rotation=45
+)
+
+axes[1, 0].hist(
+    df["age"],
+    bins=10,
+    edgecolor="black"
+)
+axes[1, 0].set_title("Histogram - Age Distribution")
+axes[1, 0].set_xlabel("Age")
+axes[1, 0].set_ylabel("Frequency")
+axes[1, 0].grid(True)
+
+marital_count = df["marital"].value_counts()
+axes[1, 1].pie(
+    marital_count.values,
+    labels=marital_count.index,
+    autopct="%1.1f%%",
+    startangle=90
+)
+axes[1, 1].set_title("Pie Chart - Marital Status")
+
+axes[2, 0].scatter(
+    df["age"],
+    df["balance"],
+    alpha=0.6
+)
+axes[2, 0].set_title("Scatter Plot - Age vs Balance")
+axes[2, 0].set_xlabel("Age")
+axes[2, 0].set_ylabel("Balance")
+axes[2, 0].grid(True)
+
+axes[2, 1].axis("off")
+
+fig.suptitle(
+    "Bank Dataset - Various Matplotlib Plots",
+    fontsize=18
+)
+
+plt.tight_layout(
+    rect=[0, 0, 1, 0.96]
+)
+
+plt.show()
