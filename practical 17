@@ -1,0 +1,20 @@
+import numpy as np
+from scipy.stats import ttest_1samp
+
+sample_data = [50, 48, 50, 51, 49, 47, 53, 50, 52, 49]
+population_mean = 50
+
+t_stat, p_value = ttest_1samp(sample_data, population_mean)
+
+print("Sample Data: ", sample_data)
+print("Population Mean: ", population_mean)
+print("t-statistic: ", round(t_stat, 4))
+print("p-value: ", round(p_value, 4))
+
+alpha = 0.05
+if p_value < alpha:
+    print("Reject H0")
+    print("There is a significant difference from the population mean.")
+else:
+    print("Fail to reject H0")
+    print("There is no significant difference from the population mean.")
